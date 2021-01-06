@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import ClassList from '../ClassList/ClassList'
+import ClassDetails from '../ClassDetails/ClassDetails'
 
 class App extends Component {
   state = {
@@ -20,6 +21,14 @@ class App extends Component {
         <Route 
           exact path='/classlist'
           render={() => <ClassList />}
+        />
+        <Route 
+          exact path='/class'
+          render={( {location} ) => 
+            <ClassDetails 
+              location={location}
+            />  
+          }
         />
       </>
     )
