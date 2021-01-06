@@ -4,7 +4,7 @@ const NavBar = (props) => {
   return(
     <header className="App-header">
       <img 
-      src="/images/logo.svg" 
+      src="/images/logo.gif" 
       alt="logo"
       style={{ width: "100px", height: "100px"}}
       className="App-logo"

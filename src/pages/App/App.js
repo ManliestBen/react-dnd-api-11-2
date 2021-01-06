@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
-
+import ClassList from '../ClassList/ClassList'
 
 class App extends Component {
   state = {
@@ -12,10 +12,15 @@ class App extends Component {
       {url: "/spellSearch", name: "Search for Spells"}    ]
   }
 
+  
   render() {
     return (
       <>
         <NavBar navItems={this.state.navItems}/>
+        <Route 
+          exact path='/classlist'
+          render={() => <ClassList />}
+        />
       </>
     )
   }
