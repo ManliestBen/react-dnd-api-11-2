@@ -12,10 +12,15 @@ class SearchForm extends Component {
     this.setState({ formData })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.handleSpellSearch(this.state.formData)
+  }
+
   render() { 
     return ( 
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           {/* input name attribute must match the one in state */}
           <input 
             type="text"
