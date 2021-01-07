@@ -6,7 +6,12 @@ class SearchForm extends Component {
       query: ''
     }
   }
-  
+
+  handleChange = e => {
+    const formData = {...this.state.formData, [e.target.name]: e.target.value}
+    this.setState({ formData })
+  }
+
   render() { 
     return ( 
       <div>
@@ -15,6 +20,8 @@ class SearchForm extends Component {
           <input 
             type="text"
             name="query"
+            value={this.state.formData.query}
+            onChange={this.handleChange}
           />
           <button type='submit'>Search</button>
         </form>
