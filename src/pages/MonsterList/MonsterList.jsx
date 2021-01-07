@@ -17,17 +17,18 @@ class MonsterList extends Component {
       <>
         <h3>Monster List</h3>
         {this.state.monsterList.map((monster) => (
-          <>
-            <Link
+            <div
               key={monster.index}
-              to={{
-                pathname: '/monster',
-                state: { monster }
-              }}
             >
-              {monster.name}
-            </Link><br></br>
-          </>
+              <Link
+                  to={{
+                  pathname: '/monster',
+                  state: { monster }
+                }}
+              >
+                {monster.name}
+              </Link><br></br>
+            </div>
         ))}
       </>
      );

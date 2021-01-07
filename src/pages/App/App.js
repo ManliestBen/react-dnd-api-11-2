@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import ClassList from '../ClassList/ClassList'
 import ClassDetails from '../ClassDetails/ClassDetails'
 import MonsterList from '../MonsterList/MonsterList'
+import MonsterDetails from '../MonsterDetails/MonsterDetails'
 
 class App extends Component {
   state = {
@@ -35,6 +36,14 @@ class App extends Component {
           exact path='/monsterlist'
           render={() => 
             <MonsterList />
+          }
+        />
+        <Route 
+          exact path='/monster'
+          render={( {location} ) => 
+            <MonsterDetails 
+              location={location}
+            />
           }
         />
       </>
