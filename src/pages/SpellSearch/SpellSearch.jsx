@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchForm from '../../components/SearchForm/SearchForm'
 import { spellSearch } from '../../services/api-calls'
+import SpellCard from '../../components/SpellCard/SpellCard'
 
 class SpellSearch extends Component {
   state = {
@@ -23,9 +24,10 @@ class SpellSearch extends Component {
         {this.state.spells.length ? 
         <>
           {this.state.spells.map(spell =>
-            <div key={spell.index}>
-              {spell.name}
-            </div>
+            <SpellCard 
+              spell={spell}
+              key={spell.index}
+            />
           )}
         </>
         :
