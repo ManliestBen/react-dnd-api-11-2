@@ -6,13 +6,14 @@ import ClassList from '../ClassList/ClassList'
 import ClassDetails from '../ClassDetails/ClassDetails'
 import MonsterList from '../MonsterList/MonsterList'
 import MonsterDetails from '../MonsterDetails/MonsterDetails'
+import SpellSearch from '../SpellSearch/SpellSearch'
 
 class App extends Component {
   state = {
     navItems: [
       {url: "/classlist", name: "Class List"}, 
       {url: "/monsterlist", name: "Scary Monsters"}, 
-      {url: "/spellSearch", name: "Search for Spells"}    ]
+      {url: "/spellsearch", name: "Search for Spells"}    ]
   }
 
   
@@ -44,6 +45,12 @@ class App extends Component {
             <MonsterDetails 
               location={location}
             />
+          }
+        />
+        <Route
+          exact path='/spellsearch'
+          render={() => 
+            <SpellSearch />
           }
         />
       </>
