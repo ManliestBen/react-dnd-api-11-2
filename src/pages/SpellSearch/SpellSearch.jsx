@@ -20,6 +20,17 @@ class SpellSearch extends Component {
         <SearchForm 
           handleSpellSearch={this.handleSpellSearch}
         />
+        {this.state.spells.length ? 
+        <>
+          {this.state.spells.map(spell =>
+            <div key={spell.index}>
+              {spell.name}
+            </div>
+          )}
+        </>
+        :
+        <h3>Please search for a spell!</h3>
+        }
       </>
     );
   }
