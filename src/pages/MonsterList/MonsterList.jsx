@@ -5,11 +5,30 @@ import { getMonsterList } from '../../services/api-calls'
 class MonsterList extends Component {
   state = { 
     monsterList: []
-   }
+  }
+
+  async componentDidMount() {
+    const monsterList = await getMonsterList()
+    this.setState({ monsterList: monsterList.results })
+  }
+
   render() { 
     return ( 
       <>
         <h3>Monster List</h3>
+        {this.state.monsterList.map((monster) => (
+          <>
+            <Link
+              key={monster.index}
+              to={{
+                pathname: '/monster',
+                state: { monster }
+              }}
+            >
+              {monster.name}
+            </Link><br></br>
+          </>
+        ))}
       </>
      );
   }
